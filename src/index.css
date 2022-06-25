@@ -9,7 +9,7 @@
     }
     .active-button-state{
         @apply absolute bottom-0 top-0 my-auto bg-black w-48 h-12 rounded-full 
-        transition-all duration-[1500ms] ease-out
+        transition-all duration-[1500ms] ease-out 
     }
     .modal{
         @apply fixed bottom-0 top-0 right-0 left-0 m-auto
