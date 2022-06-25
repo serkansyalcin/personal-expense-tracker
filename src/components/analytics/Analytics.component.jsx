@@ -20,7 +20,7 @@ export const data = {
 
 const Analytics = () => {
     return (
-        <div className="rounded-xl w-[30rem] h-80 mb-4 bg-gray-100 p-4">
+        <div className="rounded-xl w-[32rem] h-80 mb-4 bg-gray-200 p-4">
             <h3 className="text-2xl font-semibold opacity-90">Analytics</h3>
             <div className='w-60 mx-auto'>
                 <Pie data={data}/>

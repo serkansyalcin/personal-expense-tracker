@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .toggle-button-styles{
+        @apply flex justify-center items-center text-gray-50 
+        cursor-pointer w-48 h-12 rounded-xl z-10
+    }
+    .active-button-state{
+        @apply absolute bottom-0 top-0 my-auto bg-black w-48 h-12 rounded-full 
+        transition-all duration-[1500ms] ease-out
+    }
+}
