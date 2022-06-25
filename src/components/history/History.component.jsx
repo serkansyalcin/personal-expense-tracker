@@ -1,4 +1,5 @@
 import PlusIcon from '../../assets/plus-solid.svg'
+import Modal from '../modal/Modal.component'
 
 const History = () => {
     return (
@@ -13,6 +14,7 @@ const History = () => {
             >
                 <img src={PlusIcon} alt='plus icon' className='w-8 block'/>
             </div>
+            <Modal />
         </div>
     )
 }
