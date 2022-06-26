@@ -1,3 +1,8 @@
+# personal expense management web application (React.js App)
+
+![image](https://user-images.githubusercontent.com/26199757/175810767-fd96014f-6ee4-463c-a2d6-519be7b52428.png)
+![image](https://user-images.githubusercontent.com/26199757/175810819-bd7bad3b-fae7-4706-bb1f-1f1384cfbd7b.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
