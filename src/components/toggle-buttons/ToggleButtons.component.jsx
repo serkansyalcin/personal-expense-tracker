@@ -6,16 +6,11 @@ const ToggleButtons = () => {
     const currentTransactionMode = useSelector(state => state.transactions.currentTransactionMode)
     const dispatch = useDispatch()
 
-    const handleIncomeButton = () => {
-        dispatch(toggleTransactionMode())
-    }
-
-    const handleExpenseButton = () => {
+    const handleButton = () => {
         dispatch(toggleTransactionMode())
     }
 
     let dynamicActiveStateStyles = ''
-    
     let dynamicIncomeButtonStyles = ''
     let dynamicExpenseButtonStyles = ''
 
@@ -32,16 +27,16 @@ const ToggleButtons = () => {
     
     return (
         <div className="flex justify-between items-center py-8 px-16 bg-indigo-100 
-        w-[38rem] rounded-full h-24 text-2xl relative">
+        w-[38rem] rounded-full h-24 text-2xl relative z-0">
             <div 
                 className={`toggle-button-styles ${dynamicIncomeButtonStyles}`}
-                onClick={handleIncomeButton}
+                onClick={handleButton}
             >
                 Income
             </div>
             <div 
                 className={`toggle-button-styles ${dynamicExpenseButtonStyles}`}
-                onClick={handleExpenseButton}
+                onClick={handleButton}
             >
                 Expense
             </div>

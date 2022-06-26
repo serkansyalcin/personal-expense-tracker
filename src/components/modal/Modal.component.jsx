@@ -44,7 +44,7 @@ const Modal = () => {
     return (
         modal &&
         <div className='modal bg-black bg-opacity-40'>
-            <div className='modal m-auto items-center w-4/5 md:w-2/5 bg-white h-[22rem] rounded-3xl p-10'>
+            <div className='modal m-auto items-center w-4/5 md:w-3/5 lg:w-2/5 bg-white h-[22rem] rounded-3xl p-10 z-40'>
                 <h4 className='text-2xl font-semibold'>Create a New Transaction</h4>
                 <form onSubmit={e => handleSubmit(e)}>
                     <div className='flex flex-col'>

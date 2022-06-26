@@ -15,11 +15,13 @@ const transactions = createSlice({
         addIncomeItem: (state, action) => {
             const { id, amount, description } = action.payload
 
+            state.incomeAmount += Number(amount)
             state.incomesArray.push({ id, description, amount })
         },
         addExpenseItem: (state, action) => {
             const { id, amount, description } = action.payload
 
+            state.expenseAmount += Number(amount)
             state.expenseArray.push({ id, description, amount })
         },
         toggleTransactionMode: (state, action) => {

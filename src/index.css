@@ -9,9 +9,12 @@
     }
     .active-button-state{
         @apply absolute bottom-0 top-0 my-auto bg-black w-48 h-12 rounded-full 
-        transition-all duration-[1500ms] ease-out 
+        transition-all duration-1000 ease-out 
     }
     .modal{
         @apply fixed bottom-0 top-0 right-0 left-0 m-auto
+    }
+    .history-item-container{
+        @apply flex h-12 items-center p-2 rounded bg-gray-300 my-1 border-r-8 
     }
 }
