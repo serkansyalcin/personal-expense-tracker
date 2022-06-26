@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { toggleModal } from '../../features/modal/modal.slice'
 import { useState } from 'react'
 import { nanoid } from 'nanoid'
-import { addItem } from '../../features/transactions/transactions.slice'
+import { addItem, updateTransactionsFromLocalStorage } from '../../features/transactions/transactions.slice'
 
 const defaultFormField = {
     description: '',
@@ -16,6 +16,38 @@ const Modal = () => {
     const modal = useSelector(state => state.modal.modal)
     const dispatch = useDispatch()
     const currentTransactionMode = useSelector(state => state.transactions.currentTransactionMode)
+
+    const incomeFromLocalStorage = JSON.parse(localStorage.getItem('income'))
+    const incomeAmountFromLocalStorage = JSON.parse(localStorage.getItem('income-amount'))
+    
+    const expenseFromLocalStorage = JSON.parse(localStorage.getItem("expense"))
+    const expenseAmountFromLocalStorage = JSON.parse(localStorage.getItem('expense-amount'))
+
+    if(incomeFromLocalStorage){
+        dispatch(updateTransactionsFromLocalStorage({ 
+            type: 'income', 
+            data: incomeFromLocalStorage
+        }))
+    }
+    if(expenseFromLocalStorage){
+        dispatch(updateTransactionsFromLocalStorage({ 
+            type: 'expense', 
+            data: expenseFromLocalStorage
+        }))
+    }
+    if(incomeAmountFromLocalStorage){
+        dispatch(updateTransactionsFromLocalStorage({ 
+            type: 'income-amount', 
+            data: incomeAmountFromLocalStorage 
+        }))
+    }
+    if(expenseAmountFromLocalStorage){
+        dispatch(updateTransactionsFromLocalStorage({
+            type: 'expense-amount',
+            data: expenseAmountFromLocalStorage
+        }))
+    }
+
 
     const [formField, setFormField] = useState(defaultFormField)
 
@@ -44,8 +76,8 @@ const Modal = () => {
     return (
         modal &&
         <div className='modal bg-black bg-opacity-40'>
-            <div className='modal m-auto items-center w-4/5 md:w-3/5 lg:w-2/5 bg-white h-[22rem] rounded-3xl p-10 z-40'>
-                <h4 className='text-2xl font-semibold'>Create a New Transaction</h4>
+            <div className='modal m-auto items-center w-4/5 md:w-3/5 lg:w-2/5 bg-white h-96 md:h-[22rem] rounded-3xl p-10 z-40'>
+                <h4 className='text-xl md:text-2xl font-semibold'>Create a New Transaction</h4>
                 <form onSubmit={e => handleSubmit(e)}>
                     <div className='flex flex-col'>
                         <label className='font-semibold text-sm mt-8'>Description</label>
@@ -76,7 +108,7 @@ const Modal = () => {
                 </form>
                 <img 
                     src={XMarkLogo} 
-                    className='absolute top-4 cursor-pointer right-8 w-6' 
+                    className='absolute -top-10 cursor-pointer right-0 w-6' 
                     alt='x mark' 
                     onClick={handleToggleModal}
                 />

@@ -12,7 +12,7 @@ const History = () => {
     }
 
     return (
-        <div className="w-[38rem] h-auto p-8 rounded-xl bg-gray-200">
+        <div className="w-full lg:w-[38rem] h-auto p-8 rounded-xl bg-gray-200">
             <h3 className="text-2xl font-semibold">History</h3>
             <HistoryItems />
             <div 

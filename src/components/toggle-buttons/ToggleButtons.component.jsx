@@ -17,7 +17,7 @@ const ToggleButtons = () => {
     if(currentTransactionMode === 'expense'){
         dynamicExpenseButtonStyles = 'text-white'
         dynamicIncomeButtonStyles = 'text-black'
-        dynamicActiveStateStyles = 'translate-x-[18rem]'
+        dynamicActiveStateStyles = ' md:translate-x-[18rem] translate-x-[150%] sm:translate-x-[165%]'
     }
 
     if(currentTransactionMode === 'income'){
@@ -27,7 +27,7 @@ const ToggleButtons = () => {
     
     return (
         <div className="flex justify-between items-center py-8 px-16 bg-indigo-100 
-        w-[38rem] rounded-full h-24 text-2xl relative z-0">
+        w-full lg:w-[38rem] rounded-full h-24 text-2xl relative z-0">
             <div 
                 className={`toggle-button-styles ${dynamicIncomeButtonStyles}`}
                 onClick={handleButton}

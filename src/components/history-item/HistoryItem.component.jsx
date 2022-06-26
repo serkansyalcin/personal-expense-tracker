@@ -24,12 +24,12 @@ const HistoryItem = ({ item }) => {
                 alt="wallet logo" 
                 className="w-6 mr-4"
             />
-            <h2 className="text-2xl">{ item.description }</h2>
+            <h2 className="text-base md:text-2xl">{ item.description }</h2>
             <p className="ml-auto font-bold text-lg">${ Number(item.amount).toFixed(2) }</p>
             <img 
                 src={TrashLogo} 
                 alt='trash can logo' 
-                className="w-6 mr-2 ml-12 cursor-pointer" 
+                className="w-6 mr-2 ml-8 md:ml-12 cursor-pointer" 
                 onClick={handleButton}
             />
         </div>

@@ -4,11 +4,11 @@
 
 @layer components {
     .toggle-button-styles{
-        @apply flex justify-center items-center text-gray-50 
-        cursor-pointer w-48 h-12 rounded-xl z-10
+        @apply flex justify-center items-center text-gray-50 font-bold
+        cursor-pointer w-24 md:w-48 h-10 md:h-12 rounded-xl z-10 text-sm md:text-base
     }
     .active-button-state{
-        @apply absolute bottom-0 top-0 my-auto bg-black w-48 h-12 rounded-full 
+        @apply absolute bottom-0 top-0 my-auto bg-black w-24 md:w-48 h-10 md:h-12 rounded-full 
         transition-all duration-1000 ease-out 
     }
     .modal{
