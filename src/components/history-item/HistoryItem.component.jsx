@@ -1,10 +1,16 @@
 import WalletLogo from '../../assets/wallet-solid.svg'
 import TrashLogo from '../../assets/trash-can-solid.svg'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { removeItem } from '../../features/transactions/transactions.slice'
 
 const HistoryItem = ({ item }) => {
     const currentTransactionMode = useSelector(state => state.transactions.currentTransactionMode)
+    const dispatch = useDispatch()
     
+    const handleButton = () => {
+        dispatch(removeItem({ id: item.id, type: currentTransactionMode, amount: item.amount }))
+    }
+
     let dynamicContainerBorderStyles = '';
 
     (currentTransactionMode === 'income')
@@ -23,7 +29,8 @@ const HistoryItem = ({ item }) => {
             <img 
                 src={TrashLogo} 
                 alt='trash can logo' 
-                className="w-6 mr-2 ml-12" 
+                className="w-6 mr-2 ml-12 cursor-pointer" 
+                onClick={handleButton}
             />
         </div>
     )

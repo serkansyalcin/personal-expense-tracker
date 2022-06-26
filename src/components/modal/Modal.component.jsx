@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { toggleModal } from '../../features/modal/modal.slice'
 import { useState } from 'react'
 import { nanoid } from 'nanoid'
-import { addIncomeItem, addExpenseItem } from '../../features/transactions/transactions.slice'
+import { addItem } from '../../features/transactions/transactions.slice'
 
 const defaultFormField = {
     description: '',
@@ -34,8 +34,8 @@ const Modal = () => {
 
         if(description && amount) {
             (currentTransactionMode === 'income') 
-                ? dispatch(addIncomeItem({  id, description, amount }))
-                : dispatch(addExpenseItem({ id, description, amount }))
+                ? dispatch(addItem({ id, description, amount, type: 'income' }))
+                : dispatch(addItem({ id, description, amount, type: 'expense' }))
 
             setFormField(defaultFormField)
         }
